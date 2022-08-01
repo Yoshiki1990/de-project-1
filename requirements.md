@@ -11,3 +11,13 @@
 - monetary_value  — сумма, пораченная пользователем на заказы (может принимать значения от 1 до 5)
 Источник данных: БД de, схема production
 Примечание: успешно выполненным считается заказ со статусом "Closed"
+
+При построении витрины будут использованы следующие поля:
+- orders.orderid
+- orders.order_ts
+- orders.userid
+- orders.payment
+- orders.status
+- orderstatuses.id
+- orderstatuses.key
+- users.id 

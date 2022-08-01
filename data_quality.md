@@ -21,5 +21,8 @@
 | production.orderstatuslog| UNIQUE (order_id, status_id)| Ограничение UNIQUE	     	| Обеспечивает уникальность сочетания полей order_id, status_id |
 | production.orderstatuslog| FOREIGN KEY (order_id)		 | Внешний ключ			     	| Обеспечивает отсутствие ссылки на несуществующий номер заказа |
 | production.orderstatuslog| FOREIGN KEY (status_id) 	 | Внешний ключ			     	| Обеспечивает отсутствие ссылки на несуществую код статуса заказа |
+| production.users 		   | все поля NOT NULL			 | Ограничение NOT NULL   	    | Обеспечивает отсутствие пропусков в данных |
+| production.users    	   | PRIMARY KEY (id)	     	 | Первичный ключ		     	| Обеспечивает уникальность записей пользователей |
+
 
 

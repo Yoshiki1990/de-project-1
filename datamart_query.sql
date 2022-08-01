@@ -1,4 +1,4 @@
-insert into analysis.dm_rfm_segments
+insert into analysis.dm_rfm_segments (user_id, recency, frequency, monetary_value)
 select r.user_id, r.recency, f.frequency, mv.monetary_value
 from analysis.tmp_rfm_recency r
 join analysis.tmp_rfm_frequency f on f.user_id = r.user_id

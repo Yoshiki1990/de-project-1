@@ -4,7 +4,7 @@ with rec as(
 	where o.status = 4 and extract('year' from order_ts) > 2021
 	),
 usertab3 as (select id
-		,sum(payment) as pay_sum
+		,coalesce(sum(payment), sum(payment), 0) as pay_sum
 	from analysis.users u
 	left join rec f on u.id = f.user_id 
 	group by u.id
@@ -12,3 +12,4 @@ usertab3 as (select id
 select id as user_id
 	,ntile(5) over(order by pay_sum) as monetary_value
 from usertab3 u;
+

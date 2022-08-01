@@ -4,7 +4,7 @@ with rec as(
 	where o.status = 4 and extract('year' from order_ts) > 2021
 	),
 usertab2 as (select id
-		,count(distinct order_id) as cnt
+		,coalesce(count(distinct order_id),count(distinct order_id), 0) as cnt
 	from analysis.users u
 	left join rec f on u.id = f.user_id 
 	group by u.id
